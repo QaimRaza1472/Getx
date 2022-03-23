@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:getx/Controllers/product_controller.dart';
 import 'package:get/get.dart';
-
 import 'Views/product_tile.dart';
+
+
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -58,13 +59,13 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     print("--------------");
                   },
-                  icon: Icon(Icons.view_list_rounded),
+                  icon: const Icon(Icons.view_list_rounded),
                 ),
                 IconButton(
                   onPressed: () {
                     print("--------------");
                   },
-                  icon: Icon(Icons.grid_view),
+                  icon: const Icon(Icons.grid_view),
                 ),
               ],
             ),
@@ -84,7 +85,7 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ProductTile(productController.productList[index]);
                   },
-                  staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+                  staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
                 );
               }
             }),
@@ -94,6 +95,13 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
 
 /// makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
 /// https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline

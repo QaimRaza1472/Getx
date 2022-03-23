@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../Models/product.dart';
 
 class ProductTile extends StatelessWidget {
   final Product? product;
-   ProductTile(this.product);
+  const ProductTile(this.product);
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +25,21 @@ class ProductTile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Image.network(
-                    product?.imageLink??"",
+                    product?.imageLink ?? "",
                     fit: BoxFit.cover,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
-              product?.name?? "",
+              product?.name ?? "",
               maxLines: 2,
-              style:
-              TextStyle(fontFamily: 'avenir', fontWeight: FontWeight.w800),
+              style: const TextStyle(
+                  fontFamily: 'avenir', fontWeight: FontWeight.w800),
               overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             if (product?.rating != null)
               Container(
                 decoration: BoxDecoration(
@@ -52,10 +51,10 @@ class ProductTile extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      product?.rating.toString()?? "",
+                      product?.rating.toString() ?? "",
                       style: TextStyle(color: Colors.white),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.star,
                       size: 16,
                       color: Colors.white,
@@ -63,9 +62,9 @@ class ProductTile extends StatelessWidget {
                   ],
                 ),
               ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text('\$${product?.price}',
-                style: TextStyle(fontSize: 32, fontFamily: 'avenir')),
+                style: const TextStyle(fontSize: 32, fontFamily: 'avenir')),
           ],
         ),
       ),
